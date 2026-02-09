@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MindGym Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <h2>Good Morning, <span>Sravani</span> 👋</h2>
+  <div class="streak">🔥 Streak: 5 Days</div>
+</header>
+
+<section class="daily-card">
+  <h3>🧠 Daily Challenge</h3>
+  <p>Train your brain in just 3 minutes</p>
+  <button onclick="openChallenge()">Start Now</button>
+</section>
+
+<section class="games">
+  <h3>🎮 Brain Games</h3>
+  <div class="game-grid">
+    <div class="game">🧩 Memory</div>
+    <div class="game">⚡ Focus</div>
+    <div class="game">🔢 Logic</div>
+    <div class="game">⏱ Speed</div>
+  </div>
+</section>
+
+<!-- DAILY CHALLENGE MODAL -->
+<div class="modal" id="challengeModal">
+  <div class="modal-content">
+    <h2>Which number comes next?</h2>
+    <p>2, 6, 12, 20, ?</p>
+
+    <div class="options">
+      <button onclick="answer(30)">30</button>
+      <button onclick="answer(28)">28</button>
+      <button onclick="answer(24)">24</button>
+      <button onclick="answer(32)">32</button>
+    </div>
+
+    <p id="result"></p>
+    <button class="close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
