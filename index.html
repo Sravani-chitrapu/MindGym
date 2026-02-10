@@ -2,159 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindGym Login</title>
-  <style>
-    /* General reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Background Gradient */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .login-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-
-    .login-box {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .input-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-
-    input:focus {
-      border-color: #6a82fb;
-      box-shadow: 0 0 5px rgba(106, 130, 251, 0.7);
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #6a82fb;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #fc5c7d;
-    }
-
-    .links {
-      margin-top: 15px;
-    }
-
-    a {
-      color: #6a82fb;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 14px;
-    }
-
-    a:hover {
-      color: #fc5c7d;
-    }
-
-  </style>
+  <title>MindGym – Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
 
-  <div class="login-container">
-    <div class="login-box">
-      <h2>Login to MindGym</h2>
-      <form id="login-form">
-        <div class="input-group">
-          <input type="email" id="email" name="email" placeholder="Email" required />
-        </div>
-        <div class="input-group">
-          <input type="password" id="password" name="password" placeholder="Password" required />
-        </div>
-        <button type="submit" id="login-button">Login</button>
-      </form>
-      <div class="links">
-        <a href="#" id="signup-link">Sign Up</a>
-        <a href="#" id="forgot-password-link">Forgot Password?</a>
-      </div>
-    </div>
+<div class="container">
+  
+  <!-- LEFT SIDE (IMAGE / BRANDING) -->
+  <div class="left-panel">
+    <h1>🧠 MindGym</h1>
+    <p>Train your brain. Build your focus. Improve daily.</p>
+    <div class="brain-graphic">🧠</div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const loginButton = document.getElementById('login-button');
-      const loginForm = document.getElementById('login-form');
+  <!-- RIGHT SIDE (LOGIN FORM) -->
+  <div class="right-panel">
+    <h2>Welcome Back</h2>
+    <p>Login to continue your mental workout</p>
 
-      loginForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent form from submitting
+    <form onsubmit="login(event)">
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
 
-        // Get input values
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+    <span class="hint">New here? <a href="#">Create an account</a></span>
+  </div>
 
-        // Basic validation
-        if (email === '' || password === '') {
-          alert('Please fill in all fields.');
-          return;
-        }
+</div>
 
-        // Simple email validation
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          alert('Please enter a valid email address.');
-          return;
-        }
+<script>
+function login(e) {
+  e.preventDefault();
+  window.location.href = "dashboard.html";
+}
+</script>
 
-        // Simulate login process (e.g., validate credentials in real scenarios)
-        loginButton.innerHTML = 'Logging in...'; // Change button text
-        loginButton.disabled = true; // Disable button
-
-        setTimeout(() => {
-          // Simulate successful login
-          alert('Login successful! Welcome to MindGym!');
-          // Redirect to dashboard (or next page)
-          window.location.href = 'dashboard.html';
-        }, 2000); // Simulate network delay of 2 seconds
-      });
-    });
-  </script>
 </body>
 </html>
