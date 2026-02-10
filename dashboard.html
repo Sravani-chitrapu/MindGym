@@ -7,88 +7,55 @@
 </head>
 <body>
 
-<!-- FLOATING DOODLES -->
+<!-- Floating doodles -->
 <div class="doodles">
   <span>🧠</span><span>🎯</span><span>⚡</span><span>🧩</span><span>💡</span>
 </div>
 
 <header class="topbar">
   <h1>🧠 MindGym</h1>
-  <div class="user-info">
-    <span>🔥 Streak: <b id="streak">3</b></span>
-    <span>⭐ XP: <b id="xp">120</b></span>
+  <div class="info">
+    <span>🔥 Streak: <b id="streak">4</b></span>
+    <span>⭐ XP: <b id="xp">150</b></span>
   </div>
 </header>
 
-<!-- DAILY CHALLENGE -->
+<!-- Daily Challenge -->
 <section class="daily">
   <h2>🌟 Daily Challenge</h2>
-  <p>Solve today’s brain booster in under 3 minutes!</p>
+  <p>Solve today’s puzzle and earn bonus XP!</p>
   <button onclick="openChallenge()">🚀 Start Challenge</button>
 </section>
 
-<!-- BRAIN GAMES -->
-<section class="games">
-  <h2>🎮 Brain Games</h2>
-
-  <div class="category">
-    <h3>🧠 Memory Games</h3>
-    <div class="cards">
-      <div class="card">🃏 Card Recall</div>
-      <div class="card">🔢 Number Flash</div>
-    </div>
-  </div>
-
-  <div class="category">
-    <h3>⚡ Focus Games</h3>
-    <div class="cards">
-      <div class="card">🎯 Target Tap</div>
-      <div class="card">⏱ Speed Click</div>
-    </div>
-  </div>
-
-  <div class="category">
-    <h3>🔍 Logic Games</h3>
-    <div class="cards">
-      <div class="card">🧩 Pattern Find</div>
-      <div class="card">➕ Math Sprint</div>
-    </div>
-  </div>
+<!-- Navigation cards -->
+<section class="nav-section">
+  <div class="nav-card" onclick="goGames()">🎮 Brain Games</div>
+  <div class="nav-card" onclick="goLeaderboard()">🏆 Leaderboard</div>
 </section>
 
-<!-- SCORE + STATS -->
+<!-- Performance Stats -->
 <section class="stats">
-  <div class="stat-box">
-    <h3>🏆 Total Score</h3>
-    <p id="score">450</p>
+  <div class="stat">
+    <h3>🏆 Score</h3>
+    <p id="score">480</p>
   </div>
-  <div class="stat-box">
+  <div class="stat">
     <h3>📈 Accuracy</h3>
-    <p>82%</p>
+    <p>84%</p>
   </div>
-  <div class="stat-box">
-    <h3>⏳ Avg Time</h3>
-    <p>1m 40s</p>
+  <div class="stat">
+    <h3>⏱ Avg Time</h3>
+    <p>1m 32s</p>
   </div>
 </section>
 
-<!-- LEADERBOARD -->
-<section class="leaderboard">
-  <h2>🥇 Leaderboard</h2>
-  <ol>
-    <li>👑 Alex — 980 XP</li>
-    <li>🔥 Sravani — 820 XP</li>
-    <li>⚡ Rohan — 790 XP</li>
-  </ol>
-</section>
-
-<!-- MODAL -->
+<!-- Challenge Modal -->
 <div class="modal" id="challengeModal">
   <div class="modal-content">
     <h2>🧠 What comes next?</h2>
-    <p>3, 9, 27, ?</p>
-    <button onclick="submitAnswer(true)">81</button>
-    <button onclick="submitAnswer(false)">54</button>
+    <p>2, 6, 12, 20, ?</p>
+    <button onclick="submitAnswer(true)">30</button>
+    <button onclick="submitAnswer(false)">28</button>
     <p id="result"></p>
     <button class="close" onclick="closeChallenge()">Close</button>
   </div>
