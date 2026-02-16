@@ -1,56 +1,66 @@
-const brainCard = document.getElementById("brainCard");
-const speedCard = document.getElementById("speedCard");
-const reactionCard = document.getElementById("reactionCard");
-const mathCard = document.getElementById("mathCard");
+// XP Animation
+window.onload = function () {
+    document.getElementById("xpFill").style.width = "75%";
+};
 
-/* Brain Explosion */
-brainCard.addEventListener("click", () => {
-    const img = brainCard.querySelector("img");
-    img.classList.add("explode");
+// Live Clock
+function updateClock() {
+    const now = new Date();
+    document.getElementById("liveClock").innerText =
+        now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
 
-    setTimeout(()=>{
-        document.body.classList.add("zoomOut");
-        setTimeout(()=>{
-            window.location.href="brain.html";
-        },800);
-    },600);
+// Theme Toggle
+document.getElementById("themeToggle").addEventListener("click", function () {
+    document.body.classList.toggle("light");
 });
 
-/* Speed Burnout */
-speedCard.addEventListener("click", () => {
-    const smoke = document.createElement("div");
-    smoke.classList.add("smoke");
-    speedCard.appendChild(smoke);
+// Confetti
+const canvas = document.getElementById("confettiCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    setTimeout(()=>{
-        document.body.classList.add("zoomOut");
-        setTimeout(()=>{
-            window.location.href="speed.html";
-        },800);
-    },700);
-});
+let confetti = [];
 
-/* Reaction Flash */
-reactionCard.addEventListener("click", () => {
-    document.body.style.background="white";
-    setTimeout(()=>{
-        document.body.classList.add("zoomOut");
-        setTimeout(()=>{
-            window.location.href="reaction.html";
-        },800);
-    },300);
-});
+function createConfetti() {
+    confetti = [];
+    for (let i = 0; i < 120; i++) {
+        confetti.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 6 + 2,
+            d: Math.random() * 10
+        });
+    }
+}
 
-/* Math Spin */
-mathCard.addEventListener("click", () => {
-    const img = mathCard.querySelector("img");
-    img.style.transform="scale(1.6) rotate(360deg)";
-    img.style.transition="0.6s";
+function drawConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "cyan";
+    confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+}
 
-    setTimeout(()=>{
-        document.body.classList.add("zoomOut");
-        setTimeout(()=>{
-            window.location.href="math.html";
-        },800);
-    },600);
+function updateConfetti() {
+    confetti.forEach(c => {
+        c.y += 3;
+        if (c.y > canvas.height) c.y = 0;
+    });
+}
+
+function animateConfetti() {
+    drawConfetti();
+    updateConfetti();
+    requestAnimationFrame(animateConfetti);
+}
+
+document.getElementById("claimReward").addEventListener("click", function () {
+    createConfetti();
+    animateConfetti();
 });

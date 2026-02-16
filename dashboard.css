@@ -1,136 +1,192 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background: radial-gradient(circle at top, #1c1f4a, #0f1023);
-    color:white;
-    overflow:hidden;
-    transition:0.8s ease;
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    min-height: 100vh;
+    transition: 0.4s;
+    overflow-x: hidden;
+}
+
+body.light {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: black;
 }
 
 /* Header */
-header{
-    padding:30px;
-    text-align:center;
-    font-size:28px;
-    font-weight:700;
-    letter-spacing:1px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
 }
 
-/* Grid */
-.dashboard{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-    padding:40px;
-    height:80vh;
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: url("https://i.pravatar.cc/150?img=12");
+    background-size: cover;
+    border: 2px solid cyan;
 }
 
-/* Cards */
-.card{
-    position:relative;
-    background:rgba(255,255,255,0.05);
-    border-radius:25px;
-    backdrop-filter:blur(15px);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    overflow:hidden;
-    transition:0.4s ease;
-    border:1px solid rgba(255,255,255,0.1);
+/* Welcome Section */
+.welcome-section {
+    padding: 20px 40px;
 }
 
-.card:hover{
-    transform:scale(1.05) rotate(1deg);
-    box-shadow:0 0 30px rgba(0,255,255,0.4);
+.level {
+    opacity: 0.7;
+    margin-bottom: 10px;
 }
 
-/* Card images */
-.card img{
-    width:220px;
-    transition:0.4s ease;
+.xp-bar {
+    width: 300px;
+    height: 10px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Animations */
-
-.brain img{
-    animation:pulse 2s infinite;
+.xp-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    transition: width 2s ease;
 }
 
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-    100%{transform:scale(1);}
+.streak {
+    margin-top: 10px;
+    font-weight: bold;
+    color: orange;
+    animation: glow 1.5s infinite alternate;
 }
 
-.speed:hover img{
-    animation:shake 0.3s infinite;
+@keyframes glow {
+    from { text-shadow: 0 0 5px orange; }
+    to { text-shadow: 0 0 20px orange; }
 }
 
-@keyframes shake{
-    0%{transform:translateX(0);}
-    25%{transform:translateX(-6px);}
-    50%{transform:translateX(6px);}
-    75%{transform:translateX(-6px);}
-    100%{transform:translateX(0);}
+/* Daily Challenge */
+.daily-challenge {
+    margin: 20px 40px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    animation: pulse 2s infinite;
 }
 
-.reaction img{
-    animation:blink 2s infinite;
+@keyframes pulse {
+    50% { transform: scale(1.02); }
 }
 
-@keyframes blink{
-    0%{opacity:1;}
-    50%{opacity:0.6;}
-    100%{opacity:1;}
+/* Analytics */
+.analytics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px 40px;
 }
 
-.math img{
-    animation:float 3s infinite;
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-12px);}
-    100%{transform:translateY(0);}
+.card:hover {
+    transform: translateY(-8px);
 }
 
-/* Explosion */
-.explode{
-    animation:explodeAnim 0.6s forwards;
+/* Categories */
+.section-title {
+    padding-left: 40px;
 }
 
-@keyframes explodeAnim{
-    0%{transform:scale(1); opacity:1;}
-    100%{transform:scale(2.5); opacity:0;}
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 40px;
 }
 
-/* Smoke effect */
-.smoke{
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
-    border-radius:50%;
-    animation:smokeAnim 0.7s forwards;
+.category {
+    height: 180px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    background-size: cover;
 }
 
-@keyframes smokeAnim{
-    0%{opacity:0.8; transform:scale(0.5);}
-    100%{opacity:0; transform:scale(2);}
+.category:hover {
+    transform: scale(1.05) rotateX(5deg);
 }
 
-/* Zoom */
-.zoomOut{
-    animation:zoomPage 0.8s forwards;
+.brain {
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+}
+.reaction {
+    background-image: url("https://images.unsplash.com/photo-1526378722484-cc5c5103c2c6");
+}
+.math {
+    background-image: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b");
+}
+.focus {
+    background-image: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
 }
 
-@keyframes zoomPage{
-    0%{transform:scale(1);}
-    100%{transform:scale(3); opacity:0;}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* Rewards */
+.rewards {
+    padding: 40px;
+}
+
+.badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.badge {
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.badge:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: cyan;
+    font-weight: bold;
+}
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }

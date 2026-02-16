@@ -3,35 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <title>MindGym Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="dashboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-    Welcome Back, Anubhav
+<header class="header">
+    <div class="left-header">
+        <h1>🧠 MindGym</h1>
+        <p id="liveClock"></p>
+    </div>
+
+    <div class="right-header">
+        <button id="themeToggle">🌙</button>
+        <div class="avatar"></div>
+    </div>
 </header>
 
-<div class="dashboard">
+<section class="welcome-section">
+    <h2>👋 Good Morning, Anubhav</h2>
+    <p class="level">Level 5 – Thinker</p>
 
-    <div class="card brain" id="brainCard">
-        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+    <div class="xp-wrapper">
+        <div class="xp-bar">
+            <div class="xp-fill" id="xpFill"></div>
+        </div>
+        <span>750 / 1000 XP</span>
     </div>
 
-    <div class="card speed" id="speedCard">
-        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png">
+    <div class="streak">
+        🔥 <span id="streakCount">7</span> Day Streak
+    </div>
+</section>
+
+<section class="daily-challenge">
+    🚀 Today's Challenge: Beat 300ms Reaction Time!
+</section>
+
+<section class="analytics">
+    <div class="card">
+        <h3>🎯 Accuracy</h3>
+        <p>87%</p>
     </div>
 
-    <div class="card reaction" id="reactionCard">
-        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png">
+    <div class="card">
+        <h3>⚡ Avg Reaction</h3>
+        <p>320ms</p>
     </div>
 
-    <div class="card math" id="mathCard">
-        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132737.png">
+    <div class="card">
+        <h3>🧠 Brain Score</h3>
+        <p>742</p>
     </div>
 
-</div>
+    <div class="card">
+        <h3>📅 Weekly Consistency</h3>
+        <p>5/7 Days</p>
+    </div>
+</section>
+
+<h2 class="section-title">Explore Categories</h2>
+
+<section class="categories">
+
+    <div class="category brain">
+        <div class="overlay">
+            <h3>🧠 Brain</h3>
+            <p>Logic • Memory • Pattern</p>
+        </div>
+    </div>
+
+    <div class="category reaction">
+        <div class="overlay">
+            <h3>⚡ Reaction</h3>
+            <p>Speed & Reflex</p>
+        </div>
+    </div>
+
+    <div class="category math">
+        <div class="overlay">
+            <h3>🔢 Math</h3>
+            <p>Mental Sprint</p>
+        </div>
+    </div>
+
+    <div class="category focus">
+        <div class="overlay">
+            <h3>👁 Focus</h3>
+            <p>Attention Boost</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="rewards">
+    <h2>🏅 Rewards</h2>
+    <div class="badges">
+        <div class="badge">🔥 7-Day Streak</div>
+        <div class="badge">⚡ Fast Responder</div>
+        <div class="badge">🧠 Memory Master</div>
+    </div>
+
+    <button id="claimReward">Claim Reward</button>
+</section>
+
+<canvas id="confettiCanvas"></canvas>
 
 <script src="dashboard.js"></script>
 </body>
