@@ -1,64 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MindGym Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+    <meta charset="UTF-8">
+    <title>MindGym Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- Floating doodles -->
-<div class="doodles">
-  <span>🧠</span><span>🎯</span><span>⚡</span><span>🧩</span><span>💡</span>
-</div>
-
-<header class="topbar">
-  <h1>🧠 MindGym</h1>
-  <div class="info">
-    <span>🔥 Streak: <b id="streak">4</b></span>
-    <span>⭐ XP: <b id="xp">150</b></span>
-  </div>
+<header>
+    Welcome Back, Anubhav
 </header>
 
-<!-- Daily Challenge -->
-<section class="daily">
-  <h2>🌟 Daily Challenge</h2>
-  <p>Solve today’s puzzle and earn bonus XP!</p>
-  <button onclick="openChallenge()">🚀 Start Challenge</button>
-</section>
+<div class="dashboard">
 
-<!-- Navigation cards -->
-<section class="nav-section">
-  <div class="nav-card" onclick="goGames()">🎮 Brain Games</div>
-  <div class="nav-card" onclick="goLeaderboard()">🏆 Leaderboard</div>
-</section>
+    <div class="card brain" id="brainCard">
+        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+    </div>
 
-<!-- Performance Stats -->
-<section class="stats">
-  <div class="stat">
-    <h3>🏆 Score</h3>
-    <p id="score">480</p>
-  </div>
-  <div class="stat">
-    <h3>📈 Accuracy</h3>
-    <p>84%</p>
-  </div>
-  <div class="stat">
-    <h3>⏱ Avg Time</h3>
-    <p>1m 32s</p>
-  </div>
-</section>
+    <div class="card speed" id="speedCard">
+        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png">
+    </div>
 
-<!-- Challenge Modal -->
-<div class="modal" id="challengeModal">
-  <div class="modal-content">
-    <h2>🧠 What comes next?</h2>
-    <p>2, 6, 12, 20, ?</p>
-    <button onclick="submitAnswer(true)">30</button>
-    <button onclick="submitAnswer(false)">28</button>
-    <p id="result"></p>
-    <button class="close" onclick="closeChallenge()">Close</button>
-  </div>
+    <div class="card reaction" id="reactionCard">
+        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png">
+    </div>
+
+    <div class="card math" id="mathCard">
+        <img src="https://cdn-icons-png.flaticon.com/512/3132/3132737.png">
+    </div>
+
 </div>
 
 <script src="dashboard.js"></script>
