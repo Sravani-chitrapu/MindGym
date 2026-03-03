@@ -1,63 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MindGym – Login</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- FLOATING DOODLES -->
-<div class="doodles">
-  <span>🧠</span>
-  <span>⚡</span>
-  <span>🎯</span>
-  <span>🧩</span>
-  <span>💡</span>
-</div>
-
-<div class="container">
-
-  <!-- LEFT PANEL -->
-  <div class="left-panel">
-    <h1>🧠 MindGym</h1>
-    <p>Daily brain workouts for a sharper mind 🚀</p>
-
-    <div class="illustration">
-      <span>🧠</span>
-      <span>⚡</span>
-      <span>🧩</span>
-    </div>
-
-    <div class="tagline">
-      Think 💭 • Focus 🎯 • Win 🏆
-    </div>
-  </div>
-
-  <!-- RIGHT PANEL -->
-  <div class="right-panel">
-    <h2>Welcome Back 👋</h2>
-    <p>Ready for today’s challenge?</p>
-
-    <form onsubmit="login(event)">
-      <input type="text" placeholder="👤 Username" required>
-      <input type="password" placeholder="🔒 Password" required>
-      <button type="submit">🚀 Start Training</button>
-    </form>
-
-    <span class="hint">
-      New here? <a href="#">Create an account ✨</a>
-    </span>
-  </div>
-
-</div>
-
-<script>
-function login(e) {
-  e.preventDefault();
-  window.location.href = "dashboard.html";
-}
-</script>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
